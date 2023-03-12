@@ -36,9 +36,24 @@ terminalBot is a terminal robot that can integrate chatGPT into your terminal fo
 
 Download the corresponding platform's compressed package file from the GitHub release page. Once unzipped, place the bot binary file in a location accessible to environment variables. Move the bot.json configuration file to your user directory /terminalBot/bot.json, edit the configuration file with your authToken, and the bot can then be utilized in the terminal with bot  -q "question"'.
 Additionally, copying the bot binary file and renaming it as bot2 can provide another assistant by configuring 'your user directory/terminalBot/bot2.json' and adjusting its prompt.
+### bot configuring
 
+```json
+{
+  "authToken": "your authToken",
+  "proxyURL": "http://127.0.0.1:7890",
+  "questionPrefix": "",
+  "questionSuffix": "",
+  "prompt":[
+    {
+      "role": "system",
+      "content": "You are a terminal chat GPT developed by xusenlin and named TerminalBot."
+    }
+  ]
+}
+```
 
-例如我的bot2配置成一个翻译助手
+### bot2 configuring
 ```json
 {
   "authToken": "your token",
