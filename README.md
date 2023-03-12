@@ -18,7 +18,7 @@ terminalBot is a terminal robot that can integrate chatGPT into your terminal fo
 ## Screenshots
 
 ![demo](screenshots/demo.png)
-![demo2](screenshots/demo2_zh.png)
+![t](screenshots/t.png)
 
 ## Features
 - 自定义 authToken、proxyURL、questionPrefix、prompt
