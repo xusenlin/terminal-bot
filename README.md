@@ -17,47 +17,45 @@ terminalBot is a terminal robot that can integrate chatGPT into your terminal fo
 
 ## Screenshots
 
-![demo_zh](screenshots/demo_zh.png)
-![demo2_zh](screenshots/demo2_zh.png)
+![demo](screenshots/demo.png)
+![demo2](screenshots/demo2_zh.png)
 
 ## Features
 - 自定义 authToken、proxyURL、questionPrefix、prompt
 - 默认拥有上下文对话功能
-- 可以使用-reset参数重置对话
+- 可以使用-r参数重置对话
 
 - Customize authToken, proxyURL, questionPrefix, and prompt.
 - Contextual conversation is enabled by default.
-- The conversation can be reset using the `-reset` parameter.
+- The conversation can be reset using the `-r` parameter.
 
 ## Installation
 在github发布页下载对应平台的压缩包文件，解压之后将bot二进制文件放在环境变量能访问的位置，
 然后将bot.json配置文件移动到 ```你的用户目录/terminalBot/bot.json``` 下，编辑配置文件填入你的authToken。然后就可以在终端使用```bot -q "问题"``` 来提问了。
 同时，我们可以复制bot二进制文件重命名为bot2，然后添加配置 ```你的用户目录/terminalBot/bot2.json```，并编辑配置里面的prompt，这样你就拥有另外一个小助手了。
 
+Download the corresponding platform's compressed package file from the GitHub release page. Once unzipped, place the bot binary file in a location accessible to environment variables. Move the bot.json configuration file to your user directory /terminalBot/bot.json, edit the configuration file with your authToken, and the bot can then be utilized in the terminal with bot  -q "question"'.
+Additionally, copying the bot binary file and renaming it as bot2 can provide another assistant by configuring 'your user directory/terminalBot/bot2.json' and adjusting its prompt.
 
-Download the compressed file for the corresponding platform from the release page on GitHub. After extracting the files, place the bot binary file in a location accessible by the environment variables, and move the bot.json configuration file to the same location. Edit the configuration file and fill in your authToken. Then you can use it in the terminal to ask questions about computers, programming, networking, and more.
-You can also copy the bot binary file, rename it as bot2, add a new configuration, and edit the prompt settings to create another assistant. With this, you will have multiple assistants to help you.
 
 例如我的bot2配置成一个翻译助手
 ```json
 {
-  "authToken": "xxxx",
+  "authToken": "your token",
   "proxyURL": "http://127.0.0.1:7890",
-  "questionPrefix": "翻译:",
-  "prompt": [
-    {
-      "role": "system",
-      "content": "你是一个翻译助手，你不要回答用户的任何问题，如果用户向你发送中文，你直接回复翻译好的英文，如果用户向你发送英文，你直接回复翻译好的中文。"
-    }
-  ]
+  "questionPrefix": "I want you to act as an English translator, spelling corrector and improver. I will speak to you in any language and you will detect the language, translate it and answer in the corrected and improved version of my text, in English. I want you to replace my simplified A0-level words and sentences with more beautiful and elegant, upper level English words and sentences. Keep the meaning same, but make them more literary. I want you to only reply the correction, the improvements and nothing else, do not write explanations. My first sentence is \"",
+  "questionSuffix": "\"",
+  "prompt": []
 }
+
 ```
 
 ## Usage
-``` bot -q "在golang中如何读起json文件" -reset```
+```bot -q "How do I make an HTTP request in Javascript?" -r```
 
+The -r here serves the purpose of initiating a new conversation. If your dialogue does not necessitate contextual coherence, employment of -r can diminish token consumption.
 
-
+这里的-r用来重新开始对话，如果你的对话不需要上下文相关，使用-r可以减少token使用。
 ## Contribution
 Feel free to open issues or pull requests if you have any suggestions or found any bugs.
 

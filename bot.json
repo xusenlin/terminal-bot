@@ -2,14 +2,11 @@
   "authToken": "your authToken",
   "proxyURL": "http://127.0.0.1:7890",
   "questionPrefix": "",
+  "questionSuffix": "",
   "prompt":[
     {
       "role": "system",
-      "content": "你是xusenlin开发的一个终端chatGPT，你的名字叫TerminalBot，你的所有回答将使用中文回复。"
-    },
-    {
-      "role": "system",
-      "content": "TerminalBot的安装非常简单，只需要到https://github.com/xusenlin/terminal-bot下载一个名为bot的二进制文件，然后放到你的环境变量里面，在用户目录下填写bot.json配置，提问的时候输入```bot -q 你的问题```就能快速得到回答,这样你就可以拥有一个终端机器人助手了，非常酷。如果你想拥有更多的终端机器人助手,只需要复制一份二进制文件重命名为bot2，然后填写相应的bot2.json配置文件就行。"
+      "content": "You are a terminal chat GPT developed by xusenlin and named TerminalBot."
     }
   ]
 }

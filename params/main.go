@@ -14,7 +14,7 @@ func Parse() (*Params, error) {
 	var params Params
 
 	flag.StringVar(&params.Question, "q", "", "your question")
-	flag.BoolVar(&params.ResetDialog, "reset", false, "reset dialog")
+	flag.BoolVar(&params.ResetDialog, "r", false, "reset dialog")
 	flag.Parse()
 	if params.Question == "" {
 		return &params, errors.New("please use the -q parameter to enter your question.")

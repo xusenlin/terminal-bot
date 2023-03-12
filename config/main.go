@@ -20,6 +20,7 @@ type Config struct {
 	ProxyURL       string                         `json:"proxyURL"`
 	Prompt         []openai.ChatCompletionMessage `json:"prompt"`
 	QuestionPrefix string                         `json:"questionPrefix"`
+	QuestionSuffix string                         `json:"questionSuffix"`
 }
 
 func init() {

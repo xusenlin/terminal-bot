@@ -34,7 +34,7 @@ func main() {
 	}
 	dialog = append(dialog, openai.ChatCompletionMessage{
 		Role:    "user",
-		Content: c.QuestionPrefix + p.Question,
+		Content: c.QuestionPrefix + p.Question + c.QuestionSuffix,
 	})
 
 	aiConfig := openai.DefaultConfig(c.AuthToken)
