@@ -19,6 +19,7 @@ type Config struct {
 	AuthToken      string                         `json:"authToken"`
 	ProxyURL       string                         `json:"proxyURL"`
 	Prompt         []openai.ChatCompletionMessage `json:"prompt"`
+	ContextEnabled bool                           `json:"contextEnabled"`
 	QuestionPrefix string                         `json:"questionPrefix"`
 	QuestionSuffix string                         `json:"questionSuffix"`
 }

@@ -3,6 +3,7 @@
   "proxyURL": "http://127.0.0.1:7890",
   "questionPrefix": "",
   "questionSuffix": "",
+  "contextEnabled": true,
   "prompt":[
     {
       "role": "system",

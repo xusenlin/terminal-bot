@@ -27,11 +27,17 @@ func main() {
 
 	var dialog []openai.ChatCompletionMessage
 
-	if p.ResetDialog {
-		_ = c.RemoveBeforeChat()
-	} else {
-		dialog, _ = c.BeforeChat()
+	if !c.ContextEnabled && p.ResetDialog {
+		fmt.Println("Contextual dialogue functionality has not been enabled therefore the use of the -r parameter is unnecessary.")
+		return
 	}
+
+	if c.ContextEnabled && !p.ResetDialog {
+		dialog, _ = c.BeforeChat()
+	} else {
+		_ = c.RemoveBeforeChat()
+	}
+
 	dialog = append(dialog, openai.ChatCompletionMessage{
 		Role:    "user",
 		Content: c.QuestionPrefix + p.Question + c.QuestionSuffix,
@@ -71,14 +77,16 @@ func main() {
 	answer := ""
 	defer stream.Close()
 	defer func() {
-		msg := append(dialog, openai.ChatCompletionMessage{
-			Role:    "assistant",
-			Content: answer,
-		})
-		if err := c.SaveChat(msg); err != nil {
-			fmt.Println(err)
-		}
 		fmt.Println("\n==============================================")
+		if c.ContextEnabled {
+			msg := append(dialog, openai.ChatCompletionMessage{
+				Role:    "assistant",
+				Content: answer,
+			})
+			if err := c.SaveChat(msg); err != nil {
+				fmt.Println(err)
+			}
+		}
 	}()
 	fmt.Println("==============================================")
 	for {

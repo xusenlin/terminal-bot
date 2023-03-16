@@ -22,11 +22,11 @@ terminalBot is a terminal robot that can integrate chatGPT into your terminal fo
 
 ## Features
 - 自定义 authToken、proxyURL、questionPrefix、prompt
-- 默认拥有上下文对话功能
+- 上下文对话功能
 - 可以使用-r参数重置对话
 
 - Customize authToken, proxyURL, questionPrefix, and prompt.
-- Contextual conversation is enabled by default.
+- Contextual conversation.
 - The conversation can be reset using the `-r` parameter.
 
 ## Installation
