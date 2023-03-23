@@ -15,6 +15,9 @@ terminalBot 是一个终端机器人， 可以将chatGPT接入你的终端，以
 
 terminalBot is a terminal robot that can integrate chatGPT into your terminal for fast questioning. By configuring the prompt, we can have various assistants in the terminal.
 
+
+> https://github.com/xusenlin/chatGPT 是一个简单(仅一个go和一个html源代码文件)易用的WEB chatGPT,支持代码高亮。
+
 ## Screenshots
 
 ![demo](screenshots/demo.png)
