@@ -57,6 +57,7 @@ Additionally, copying the bot binary file and renaming it as bot2 can provide an
 ```
 
 ### bot2 configuring
+
 ```json
 {
   "authToken": "your token",
@@ -67,6 +68,19 @@ Additionally, copying the bot binary file and renaming it as bot2 can provide an
 }
 
 ```
+
+### bot3 变量取名神器
+```json
+{
+  "authToken": "your token",
+  "proxyURL": "http://127.0.0.1:7890",
+  "contextEnabled": false,
+  "questionPrefix": "请根据大多数知名源代码帮我取一个变量名，它用来表示\"",
+  "questionSuffix": "\"",
+  "prompt": []
+}
+```
+
 
 ## Usage
 ```bot -q "How do I make an HTTP request in Javascript?" -r```
