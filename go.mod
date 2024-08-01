@@ -1,5 +1,5 @@
-module terminalBot
+module githubGolangTop
 
-go 1.18
+go 1.21
 
-require github.com/sashabaranov/go-openai v1.4.1 // indirect
+require github.com/sashabaranov/go-openai v1.27.0 // indirect
